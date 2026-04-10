@@ -1,13 +1,13 @@
-- name : loops remove 
-  hosts: local
+- name: loops remove
+  hosts: localhost
   connection: local
   become: yes
-  tasks:  
+  tasks:
   - name: remove packages
-  ansible.builtin.package:
-    name: "{{ item }}"
-    state: absent
-  loop:
-    - nginx
-    - mysql
-    - zip
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: absent
+    loop:
+      - nginx
+      - mysql
+      - zip
