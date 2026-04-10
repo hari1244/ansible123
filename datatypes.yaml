@@ -1,0 +1,20 @@
+- name : datatypes in ansible
+  hosts: local
+  connection: local
+  vars:
+    string : ansible
+    integer : 10
+    float : 3.14
+    boolean : true
+    list : 
+      - item1
+      - item2
+      - item3
+    dict :
+      key1 : value1
+      key2 : value2
+      key3 : value3
+  tasks :
+  - name: print the datatypes info
+    ansible.builtin.debug:  
+     msg : "string is : {{ string }} , integer : {{integer  }}, float {{float}}, boolean {{boolean}}, list {{list}}, dict {{dict}}"
